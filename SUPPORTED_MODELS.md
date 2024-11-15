@@ -336,5 +336,5 @@ For running the Image Classification Tensorflow model, certain parameters are re
 #### Verification
 For verifying that the pytorch models are installed correctly, you can run the following command,
 ```bash
-python test.py --model PyTorch --confidence 0.5 --iteration 3 --image references/people.jpg
+python test.py --model PyTorch --confidence 0.05 --iteration 3 --image references/people.jpg
 ```

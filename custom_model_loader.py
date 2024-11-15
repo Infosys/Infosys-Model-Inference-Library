@@ -9,7 +9,7 @@ import io
 import json
 import time
 from milapi.utils import get_mtp, get_datetime_utc
-from archive.python_model_loader import BaseModelLoader
+from modelloader.base_model_loader import BaseModelLoader
 
 
 class CustomDetectoModelLoader(BaseModelLoader):

@@ -79,7 +79,6 @@ class Tensorflow(BaseModelLoader):
         img = self.np.expand_dims(img, axis=0)
         st1 = time.time()
         predictions = self.model_obj.predict(img)
-        print("predictions : ", predictions)
         print("Time taken for Tensorflow model prediction : ", time.time() - st1)
 
         output = []
