@@ -19,12 +19,14 @@ def fastapi_runner(config_parser):
         # module1 = "PythonModelExecutor"
         if model_name in model_to_class_mapper:
             module1 = f"modelloader.{model_to_class_mapper[model_name][0].lower()}_model_loader"
+            class_module = model_to_class_mapper[model_name][1]
         else:
             module1 = f"modelloader.{model_name.lower()}_model_loader"
+            class_module = model_name
         module2 = "predict_request"
         endpoint = config_parser["FastAPI"]["endpoint"]
         file_location = "."
-        class_module = model_name
+
         class_attributes = {"config": config_parser, "model_name": model_name}
         class_type = "yes"
     else:
