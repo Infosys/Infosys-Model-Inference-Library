@@ -77,6 +77,7 @@ The Detecto model needs certain parameters to be set in the configuration file [
 | name         | The name of the model to be used.                                                                                                                                                                                                                | fasterrcnn_resnet50_fpn    |
 | model_path   | The path to the model file. Passing an empty string will download the model from internet and place it in a cache location.                                                                                                                      | []                         |
 | classes      | The classes that you want the model to predict on. Passing an empty string would make the model to consider all the COCO dataset classes. **Note**: The index of the classes begin from 1 for this model(i.e, for "person" class,the index is 1) | ["person", "car"] or [1,2] |
+
 **Reference** : [coco-labels-2014_2017](https://github.com/amikelive/coco-labels/blob/master/coco-labels-2014_2017.txt)
 
 #### Verification
@@ -135,6 +136,7 @@ In the above configuration sample, the `CocoObjectDetection_Y5` and `CocoObjectD
 | conf_thres   | The confidence threshold for filtering the model predictions.                                                                                                                                                    | 0.25                        |
 | iou_thres    | The IOU threshold for the model.                                                                                                                                                                                 | 0.7                         |
 | classes      | List of indexes of the classes, the model needs to predict. **Note**: The index of the classes begin from 0(i.e, for "person" class,the index is 0). If [], then all the classes in COCO dataset are considered. | [0,1] or []                 |
+
 **Reference** : [coco-labels-2014_2017](https://github.com/amikelive/coco-labels/blob/master/coco-labels-2014_2017.txt)
 
 #### Verification
@@ -183,6 +185,7 @@ The YoloV7 model needs certain parameters to be set in the configuration file [m
 | conf_thres   | The confidence threshold for filtering the model predictions.                                                                                                                                                    | 0.25                              |
 | iou_thres    | The IOU threshold for the model.                                                                                                                                                                                 | 0.7                               |
 | classes      | List of indexes of the classes, the model needs to predict. **Note**: The index of the classes begin from 0(i.e, for "person" class,the index is 0). If [], then all the classes in COCO dataset are considered. | [0,1] or []                       |
+
 **Reference** : [coco-labels-2014_2017](https://github.com/amikelive/coco-labels/blob/master/coco-labels-2014_2017.txt)
 
 
@@ -278,7 +281,8 @@ Download the model weight file, place it in your preferred location and mentione
 | classes          | The classes the user is interested in filtering. **For Example** specifying ["fire", "smoke"] gives the predictions of those classes alone and does not return any prediction for "neutral" image | ["fire"]                                     |
 | input_image_size | Input dimensions of the input image. It is a list of image width and height.                                                                                                                      | [640,640]                                    |
 | device           | The device on which the model needs to run.                                                                                                                                                       | "cpu"                                        |
-**Note: ** Refer to [milutils/dataset_class_names.py](milutils/dataset_class_names.py) for the list of classes in the ImageNet dataset.
+
+**Note:** Refer to [milutils/dataset_class_names.py](milutils/dataset_class_names.py) for the list of classes in the ImageNet dataset.
 
 
 #### Verification
@@ -326,7 +330,8 @@ For running the Image Classification Tensorflow model, certain parameters are re
 | classes          | The classes the user is interested in filtering. **For Example** specifying ["Irish wolfhound", "Italian greyhound"] gives the predictions of those classes alone and does not return any predictions | ["A class from ImageNet dataset"]                      |
 | input_image_size | Input dimensions of the input image. It is a list of image width and height.                                                                                                                          | [640,640]                                              |
 | device           | The device on which the model needs to run.                                                                                                                                                           | "cpu"                                                  |
-**Note: ** Refer to [milutils/dataset_class_names.py](milutils/dataset_class_names.py) for the list of classes in the ImageNet dataset.
+
+**Note:** Refer to [milutils/dataset_class_names.py](milutils/dataset_class_names.py) for the list of classes in the ImageNet dataset.
 
 #### Verification
 For verifying that the pytorch models are installed correctly, you can run the following command,

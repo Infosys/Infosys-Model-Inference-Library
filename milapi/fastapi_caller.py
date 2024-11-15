@@ -53,9 +53,10 @@ def fastapi_runner(config_parser):
     endpoint = config_parser["FastAPI"]["endpoint"]
 
     # Print Swagger UI URL
-    print(f"Swagger UI: http://{"localhost" if host=='0.0.0.0' else host}:{port}/docs")
+    host_name = "localhost" if host=='0.0.0.0' else host
+    print(f"Swagger UI: http://{host_name}:{port}/docs")
 
     # Print endpoint URL
-    print(f"Endpoint URL: http://{"localhost" if host=='0.0.0.0' else host}:{port}{endpoint}")
+    print(f"Endpoint URL: http://{host_name}:{port}{endpoint}")
 
     uvicorn.run(app_builder.app, host=host, port=port)
