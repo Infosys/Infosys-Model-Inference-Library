@@ -1,0 +1,85 @@
+{
+  "ModelExecutor": {
+    "model_name": "CocoObjectDetection_De",
+    "model_loader_file": "default"
+  },
+  "ModelLoader": {
+    "file_location":".",
+    "is_class":"Yes",
+    "class_name": "CocoObjectDetection_De",
+    "first_method_to_call_in_class":"predict_request"
+  },
+  "FastAPI" :
+  {
+    "host" : "0.0.0.0",
+    "port" : 8448,
+    "endpoint": "/CocoObjectDetection_De"
+  },
+  "CocoObjectDetection_De":
+  {
+    "name" : "fasterrcnn_resnet50_fpn",
+    "model_path": [],
+    "classes": []
+  },
+  "PyTorch":
+  {
+    "name" : "mobilenetv2_model",
+    "category" : "image_classification",
+    "model_path" : ["C:/IMIL/Demo/weight_files/resnet50.pth"],
+    "class_names": ["imagenet"],
+    "classes" : ["limousine, limo", "forklift"],
+    "input_image_size": [224,224],
+    "device" : "cpu"
+  },
+  "Tensorflow":
+  {
+    "name" : "mobilenetv2_model",
+    "model_path" : ["C:/IMIL/Demo/weight_files/mobilenetv2_model.h5"],
+    "class_names": ["imagenet"],
+    "classes" : [],
+    "input_image_size": [224,224],
+    "device" : "cpu"
+  },
+  "CocoObjectDetection_Y5":
+  {
+    "model_path": ["path to th weight file"],
+    "device" : "cpu",
+    "conf_thres" : 0.25,
+    "iou_thres" : 0.7,
+    "classes": [0, 1, 39]
+  },
+  "CocoObjectDetection_Y8":
+  {
+    "model_path": ["path to th weight file"],
+    "device" : "cpu",
+    "conf_thres" : 0.25,
+    "iou_thres" : 0.7,
+    "classes": []
+  },
+  "CocoObjectDetection_Y7":
+  {
+    "yolo_path" : "place/the/yolo7/directory/here",
+    "model_path": ["path/to/Yolov7/model/weight/yolov7.pt"],
+    "device" : "cpu",
+    "img_size" : 640,
+    "conf_thres" : 0.25,
+    "iou_thres" : 0.7,
+    "classes": []
+  },
+  "FacialExpressionRecognition":
+  {
+    "model_path": []
+  },
+  "CustomDetectoModelLoader":
+  {
+    "name" : "fasterrcnn_resnet50_fpn",
+    "model_path": [""],
+    "classes": ""
+  },
+  "CustomClipModelLoader":
+  {
+    "clip_model": "ViT-B/32",
+    "model_path": [""],
+    "device" : "cpu"
+  }
+}

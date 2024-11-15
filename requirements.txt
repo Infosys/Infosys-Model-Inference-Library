@@ -1,0 +1,19 @@
+# Usage: pip install -r requirements.txt
+
+# base
+opencv-python
+pillow
+numpy
+pyfiglet
+
+# Fast API
+bcrypt
+cryptography
+fastapi
+pydantic
+PyJWT
+python-jose
+python-multipart
+starlette
+uvicorn
+passlib
