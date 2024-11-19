@@ -34,7 +34,7 @@ class CustomClipModelLoader(BaseModelLoader):
         # return the output
 ```
 
-If you are a developer, and you want to add your own custom code to work with Imfosys model Inference Library, it is simple.
+If you are a developer, and you want to add your own custom code to work with Infosys model Inference Library, it is simple.
 - Create a class in a python file [custom_model_loader.py](custom_model_loader.py). In this case, the class name is `CustomClipModelLoader`
 - The class name should be appended with ModelLoader at the end. This is a convention to follow.
 - The functional design of the Class module is at the Developer's ease. Inherit the `BaseModelLoader` class and overwrite the necessary methods. 
@@ -43,7 +43,7 @@ If you are a developer, and you want to add your own custom code to work with Im
 - If preprocessing and post-processing are required for your process, then add it accordingly in the predict method.
 
 ### Example 2:
-Let's look at another simpler example. Refer to the `CustomModelLoader` class in [custom_model_loader.py](custom_model_loader.py) where we load Detecto - an object detection model trained on COCO Dataset.
+Let's look at another simpler example. Refer to the `CustomDetectoModelLoader` class in [custom_model_loader.py](custom_model_loader.py) where we load Detecto - an object detection model trained on COCO Dataset.
 
 ```text
 Sudo Code of CustomDetectoModelLoader class:
@@ -58,7 +58,7 @@ class CustomDetectoModelLoader(BaseModelLoader):
 
 ```
 
-In CustomModelLoader class,
+In CustomDetectoModelLoader class,
 - We are overloading only the constructor, i.e. the __init __() to load and initialize the model.
 - The `predict()` and `predict_request()` are not overwritten and are inherited from the `BaseModelLoader` class.
 - The preprocessing() and post-processing() methods are not utilized in this sample.
