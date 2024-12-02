@@ -37,8 +37,8 @@ IMIL serves as a bridge between machine learning models and their practical appl
 Make sure python is installed in the machine. If required, create a virtual environment and activate it.
 
 ### Setup Instructions
-#### CLoning Git Repository
-CLone the repository using the following command,
+#### Cloning Git Repository
+Clone the repository using the following command,
 ```bash
 git clone https://github.com/Infosys/Infosys-Model-Inference-Library.git
 cd Infosys-Model-Inference-Library
@@ -133,13 +133,17 @@ We have provided a file for testing the installation. Execute the [test.py](test
  - confidence - confidence threshold for the model
  - iteration - How many times do you want the model to run
  - image - references/people.jpg
- - prompt - How many times do you want the model to run
+ - prompt - Prompt for the model
+
+The below command is just an example of for syntax.
+
 ```
 python test.py --model CocoObjectDetection_De --confidence 0.5 --iteration 3 --image references/people.jpg --prompt "['fire', 'smoke', 'neutral']"
 ```
+
 The above command will use [references/people.jpg](references/people.jpg) to run the `CocoObjectDetection_De` model for 3 times. The confidence threshold is set to 0.5. The output will be printed on the console.
 
-The `prompt` parameter is used here just to show the usage of the prompt parameter in [test.py](test.py). The prompt parameter is not used for `CocoObjectDetection_De` file.
+The `prompt` parameter is used here just to show the usage of the prompt parameter in [test.py](test.py). The prompt parameter is not used for `CocoObjectDetection_De` model.
 
 ## Usage
 ### Basic Usage
