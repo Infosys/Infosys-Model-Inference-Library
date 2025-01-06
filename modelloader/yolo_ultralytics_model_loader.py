@@ -42,9 +42,10 @@ class Yolo_Ultralytics(BaseModelLoader):
 
         """
         image = self.PilImage.open(io.BytesIO(base64.b64decode(Base_64)))
+        width, height = image.size
         result = self.model_obj.predict(image, classes=self.classes, conf=Cs)
         # boundingBox, cs, cl = yolo_extract(result[0])
-        boundingBox = result[0].boxes.xywhn.numpy().tolist()
+        boundingBox = result[0].boxes.xyxy.numpy().tolist()
         cs = result[0].boxes.conf.numpy().tolist()
         cl = result[0].boxes.cls.numpy().tolist()
         output = []
@@ -54,8 +55,9 @@ class Yolo_Ultralytics(BaseModelLoader):
                     "Lb": self.model_obj.names[int(cl[i])],
                     "Cs": cs[i],
                     "Dm": {
-                        "X": boundingBox[i][0],
-                        "Y": boundingBox[i][1],
-                        "H": boundingBox[i][2] + boundingBox[i][0],
-                        "W": boundingBox[i][3] + boundingBox[i][1]}})
+                        "X": round(boundingBox[i][0]/width, 4),
+                        "Y": round(boundingBox[i][1]/height, 4),
+                        "W": round((boundingBox[i][2]-boundingBox[i][0])/width, 4),
+                        "H": round((boundingBox[i][3]-boundingBox[i][1])/height,4)}})
+        print("output : ", output)
         return output
