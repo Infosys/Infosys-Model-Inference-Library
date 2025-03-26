@@ -15,7 +15,7 @@ IMIL serves as a bridge between machine learning models and their practical appl
 ## IMIL Process Flow
 ![alt text](references/IMIL_Process_flow.png)
 
-## Benifits
+## Benefits
 - **Improved Efficiency**: The on-demand loading, and dual invocation modes enhance the efficiency of inference tasks, ensuring optimal resource utilization and faster response times.
 - **Broad Applicability**: With its framework-agnostic design, batch processing capabilities, and extensive customization options, IMIL is suitable for a wide range of applications, from academic research to commercial AI solutions.
 - **Developer-Friendly API**: IMIL provides intuitive and well-documented APIs, enabling developers to integrate models into their workflows without changing the payload. This reduces the learning curve and speeds up the development cycle.
