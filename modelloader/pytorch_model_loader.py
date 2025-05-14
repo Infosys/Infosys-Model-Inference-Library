@@ -174,7 +174,7 @@ class PyTorch(BaseModelLoader):
         image = self.PilImage.open(io.BytesIO(base64.b64decode(base64_image)))
         self.original_image_width, self.original_image_height = image.size
 
-        image = self.preprocessing(image)
+        image = self.preprocessing(image).to(self.device)
         st1 = time.time()
         predictions = self.model_obj(image)
         print("Time taken for PyTorch model prediction : ", time.time() - st1)
